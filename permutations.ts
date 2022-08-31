@@ -17,8 +17,12 @@ function permute(nums: number[]): number[][] {
     // keeps track of the first integer to consider in the (graph / tree)
     // first is typically the first level of the tree starting from 0
     function backtrack(first = 0) {
+        // if the first === nums.length (n), then current permutation is done
+        
         
     }
+     
+    let output = []; 
     
-    
+    return output;
 };
