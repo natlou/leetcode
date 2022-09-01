@@ -1,3 +1,8 @@
+/*
+Runtime: 69 ms, faster than 96.30% of TypeScript online submissions for Subsets.
+Memory Usage: 46 MB, less than 7.72% of TypeScript online submissions for Subsets.
+*/
+
 function subsets(nums: number[]): number[][] {
     // each element is a new level 
 //                                [1,2,3]
