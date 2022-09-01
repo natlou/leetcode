@@ -8,6 +8,7 @@
 5. Write code by combining recursive pattern with base case.
 
 # backtracking / recursive dfs helper function 
+```
 function fn(nums: number[]) : number[][] {
   // global output 
   const output = []; 
@@ -34,3 +35,4 @@ function fn(nums: number[]) : number[][] {
   dfs();
   return output; 
 }
+```
