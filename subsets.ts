@@ -63,8 +63,41 @@ function subsets_cascading(nums: number[]): number[][] {
             new_subset.push(num)
             output.push(new_subset);
         }
-        
+
     }
     
     return output;
+};
+
+function subsets_dfs(nums: number[]): number[][] {
+
+    // global result / output 
+    let output : number[][] = []; 
+    
+    // dfs recursive / backtracking helper
+    // index of the first element + the current combination
+    const dfs = (first, curr, level, nums) => {
+        
+        // base case 
+        if (curr.length === level) {
+            output.push(curr.map(x => x));
+            return;
+        } 
+        
+        // dfs recusive step 
+        for (let i = first; i < nums.length; i++) {    
+            // add nums[i] to the current combination 
+            curr.push(nums[i]); 
+            // use next integer to complete the combination
+            dfs(i + 1, curr, level, nums); // this will increase the length of curr by 1
+            // backtrack 
+            curr.pop(); 
+        }
+    }
+    
+    for (let k = 0; k < nums.length + 1; k++) {
+        dfs(0, [], k, nums);
+    }
+    
+    return output; 
 };
