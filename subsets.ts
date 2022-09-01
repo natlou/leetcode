@@ -49,3 +49,22 @@ function subsets(nums: number[]): number[][] {
 
     return output;
 };
+
+function subsets_cascading(nums: number[]): number[][] {
+    
+    let output : number[][] = [[]];
+    
+    for (let num of nums) {
+
+        let output_copy = output.map(x => x);
+        
+        for (let subset of output_copy) {
+            let new_subset : number[] = subset.map(x => x);
+            new_subset.push(num)
+            output.push(new_subset);
+        }
+        
+    }
+    
+    return output;
+};
