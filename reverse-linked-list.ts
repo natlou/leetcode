@@ -26,3 +26,16 @@ function reverseList(head: ListNode | null): ListNode | null {
     return prev; 
     
 };
+
+function reverseListRecursive(head: ListNode | null): ListNode | null {
+    
+    if (head === null || head.next === null) {
+        return head;
+    }
+    
+    let p = reverseListRecursive(head.next); 
+    head.next.next = head; 
+    head.next = null; 
+    return p; 
+    
+};
